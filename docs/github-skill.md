@@ -8,19 +8,22 @@ categories: github
 * Add Upstream
 `git remote add upstream https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web.git`
 
-* Submit pull request to merge branch
-
 ### Git Command Summary
 #### Category - Repository
 * Create a Git repository `git init`
+
 * Download a remote repository `git clone`
 
 #### Branch
 * Create/Switch to a branch `git checkout`
 
-eg `git checkout -b build-pipeline`
+    eg `git checkout -b build-pipeline`
 
-The `-b` argument specifies to create a new branch if it doesn't exist. Omit the `-b` argument when you want to switch to an existing branch.
+    The `-b` argument specifies to create a new branch if it doesn't exist. Omit the `-b` argument when you want to switch to an existing branch.
+
+    eg `git checkout -b feature/home-page-text`
+
+    Add prefix before branch name as convention like `feature/<branch-name>` or `bugfix/<bug-number>`
 
 * Check current branch `git branch -v`
 
@@ -31,22 +34,52 @@ The `-b` argument specifies to create a new branch if it doesn't exist. Omit the
 
 * Stage files to commit `git add`
 
-eg `git add azure-pipelines.yml templates/build.yml`
+    eg `git add azure-pipelines.yml templates/build.yml`
 
 * Commit files to a branch `git commit`
 
-eg `git commit -m "Add build tasks"`
+    eg `git commit -m "Add build tasks"`
 
 The -m argument specifies the commit message.
+
+[About Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
 #### Remote Synchronization
 * Download a branch from a remote repository `git pull`
 
-eg `git pull origin master`
+    eg `git pull origin master`
 
 * Upload a branch to a remote repository `git push`
 
-eg `git push origin build-pipeline`
+    eg `git push origin build-pipeline`
+
+* Submit pull request to merge branch
+
+    Do on local client.
+
+    1. Checkout/Switch to master branch to check for udpates
+
+    `git checkout master`
+
+    `git pull origin master`
+    
+    2. Checkout/Switch to specified branch (like feature branch)
+
+    `git checkout feature/home-page-text`
+    
+    3. Merge current branch to master
+
+    `git merge master`
+
+    Do on GitHub web.
+
+    1. Navigate to branch tag
+
+    2. Next to desired branch, select `Create Pull Request`
+
+    [Reference](https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/5-push-a-change#submit-a-pull-request)
+
+    3. Optionally add pull request policies to protect the master branch
 
 ### GitHub Branching Workflow
 
@@ -63,3 +96,14 @@ eg `git push origin build-pipeline`
 ![github-brancing-workflow-6](https://docs.microsoft.com/en-us/learn/azure-devops/implement-code-workflow/media/2-github-paths-6.png)
 
 ![github-brancing-workflow-7](https://docs.microsoft.com/en-us/learn/azure-devops/implement-code-workflow/media/2-github-paths-7.png)
+
+#### Branching Strategies
+[Reference](https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/10-summary#implement-branch-strategies)
+
+* Feature Branch Workflow
+
+* Gitflow Workflow
+
+* Forking Branch Workflow
+
+### GitHub Badge
