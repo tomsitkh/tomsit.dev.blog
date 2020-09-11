@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Some basic usage of git commands and concepts"
 categories: github
 ---
 

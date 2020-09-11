@@ -1,4 +1,6 @@
 ---
+layout: post
+title: "Visual Studio Code Settings"
 categories: vscode
 ---
 

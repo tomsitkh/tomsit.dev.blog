@@ -1,4 +1,6 @@
 ---
+layout: post
+title: "Basic .Net Core CLI commands"
 categories: dotnetcore
 ---
 

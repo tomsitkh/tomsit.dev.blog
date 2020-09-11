@@ -1,4 +1,6 @@
 ---
+layout: post
+title: "Some References for Azure DevOps"
 categories: azure, devops
 ---
 
