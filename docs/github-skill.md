@@ -1,4 +1,5 @@
 ---
+layout: post
 categories: github
 ---
 
@@ -40,9 +41,9 @@ categories: github
 
     eg `git commit -m "Add build tasks"`
 
-The -m argument specifies the commit message.
+    The -m argument specifies the commit message.
 
-[About Git Commit Message](https://chris.beams.io/posts/git-commit/)
+    [About Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
 #### Remote Synchronization
 * Download a branch from a remote repository `git pull`
@@ -55,31 +56,51 @@ The -m argument specifies the commit message.
 
 * Submit pull request to merge branch
 
-    Do on local client.
-
-    1. Checkout/Switch to master branch to check for udpates
-
-    `git checkout master`
-
-    `git pull origin master`
-    
-    2. Checkout/Switch to specified branch (like feature branch)
-
-    `git checkout feature/home-page-text`
-    
-    3. Merge current branch to master
-
-    `git merge master`
-
-    Do on GitHub web.
-
-    1. Navigate to branch tag
+    1. On GitHub web repo, navigate to branch tag.
 
     2. Next to desired branch, select `Create Pull Request`
 
     [Reference](https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/5-push-a-change#submit-a-pull-request)
 
     3. Optionally add pull request policies to protect the master branch
+
+* Merge >=2 dev Changes `git merge`
+
+    [Offical git merge doc](https://git-scm.com/docs/git-merge)
+
+    [git merge vs GitHub Pull Request](https://softwareengineering.stackexchange.com/a/304926)
+
+    used by git pull to incorporate changes from another repository
+
+    In below example, current branch is `master` while `topic` branched from `master` (**E**)
+
+    ```
+          A---B---C topic
+         /
+    D---E---F---G master
+    ```
+
+    Running `git merge topic` applies `topic` changes (**A** to **C**) on `master` (**G**) and create **H**.
+
+    ```
+          A---B---C topic
+         /         \
+    D---E---F---G---H master
+    ```
+
+    1. Checkout/Switch to master branch to check for udpates
+
+        `git checkout master`
+
+        `git pull origin master`
+    
+    2. Checkout/Switch to specified branch (like feature branch)
+
+        `git checkout feature/home-page-text`
+    
+    3. Merge current branch to master
+
+        `git merge master`
 
 ### GitHub Branching Workflow
 
